@@ -6,7 +6,7 @@
 
 **Concepts covered**: Flexbox, flex property, determining breakpoints, media queries, responsive design using the _mobile-first_ design strategy.
 
-In this assignment you will add flexboxes to your `<body>` element, hero overlay, menu, articles, and cards using "mobile-first" design and media queries.
+In this assignment you will add flexboxes to your `<body>` element, hero overlay, menu, articles, and cards using mobile-first design and media queries.
 
 | :warning: This assignment builds on your _Overlays and cards_ assignment                                                                                                                                                                                                                                                                                                                                                                               |
 | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -90,15 +90,15 @@ Since you used the `clamp()` function to dynamically resize your `<h1>` text in 
 
 ## Menu
 
-Use a flexbox to display your menu horizontally. Since your menu items are in a `<ul>`, you need to remove the bullets (`list-style: none`) and the unordered list's default padding and margin. Also, since you want a large "tap target", if you add space to the menu items, add it to the `<a>` elements, but remember, `<a>` elements are inline elements, and will not take top and bottom padding or margins unless you set them to `display: block` or `display: inline-block`.
+Use a flexbox to display your menu horizontally. Since your menu items are in a `<ul>`, you need to remove the bullets and the unordered list's default padding and margin. Also, since you want a large "tap target", if you add space to the menu items, add it to the `<a>` elements, but remember, `<a>` elements are inline elements, and will not take top and bottom padding or margins unless you set them to `display: block` or `display: inline-block`.
 
 Menus are simple enough that you can use `justify-content` to space the menu items evenly. If you use `justify-content` you will need to set `align-self: stretch` on the menu container that is a direct child of `<body>` so that the menu won't collapse to its minimum width, which is a behavior of `align-items: center` . You may need to set a `max-width` on a menu container to prevent the menu from stretching too wide on larger screens.
 
-Don't worry if your menu does not display properly on mobile devices. We will fix that in the next assignment by converting it to a dropdown menu. Finally, make sure that your menu items still are styled and have hover effects.
+Don't worry if your menu does not display properly on mobile devices. We will fix that in the next assignment by converting it to a dropdown menu. Finally, make sure that your menu items are still styled and have hover effects.
 
 ## Main
 
-Your `<main>` element should contain two articles. Since we don't want a line of text to be too long to read comfortably, you should set a maximum width for your `<main>` element. We will be formatting our articles with images on the left or right of the text, so if you have set a `max-width` on your `<main>` element, you will need to increase it to accommodate the article images. You can adjust it after you finish your article layouts, but I'd recommend setting it to `max-width: 70rem` while you layout your articles, and then adjust it, if needed, when your articles are styled. Also, make sure your main has a gutter around it, so it doesn't run up to the edge of the screen.
+Your `<main>` element should contain two `<article>` elements. Since we don't want a line of text to be too long to read comfortably, you should set a maximum width for your `<main>` element. We will be formatting our articles with images on the left or right of the text, so if you have set a `max-width` on your `<main>` element, you will need to increase it to accommodate the article images. You can adjust it after you finish your article layouts, but I'd recommend setting it to `max-width: 70rem` while you layout your articles, and then adjust it, if needed, when your articles are styled. Also, make sure your main has a gutter around it, so it doesn't run up to the edge of the screen.
 
 ## Responsive article `.panel` class
 
@@ -144,7 +144,7 @@ Add a media query at the end of your CSS file to format your `.panel` to display
 Make sure to
 
 - remove the `order` property so that the images don't display on the left
-- use the `flex` property to set up a display ratio for the images and text. For example, you can have the image take up 30-40% of the article and the text take up 60-70% of the article.
+- use the `flex` property to set up a display ratio for the images and text. For example, you can have the image take up 40% of the article and the text take up 60%, or use another ratio such as 30%/70%.
 - set a gap between the image and text
 - remove any top margin on the article h2 so that it aligns with the top of the image
 
@@ -183,24 +183,9 @@ When your assignment is finished, check that you don't have any warnings or erro
 
 Make sure to test your website on [validator.nu](https://validator.nu/). If you have any errors, fix them before submitting your URL to Learning Suite.
 
-### :star: Assignment tests
-
-_All but the last three tests are from previous assignments._
-
-General HTML structure
-
-- `<head>` has `<title>`, `<meta>` description and favicon info, loads normalize, fonts, and main styles in proper order
-- all HTML files should contain an `<h1>`, and only one `<h1>`
-- all index.html files have `<header>` containing a `<nav>` and `<ul>`
-
-Tests for main index.html
-
-- main index.html must contain a `<picture>`, one `<main>`, at least two `<article>`, an `<aside>`, and a `<footer>`
-- each `<article>` must contain an `<h2>`, at least one `<p>` and an `<a class="button">`
-
 ## :rocket: Publish on Github Pages
 
-When your assignment is finished, check that is doesn't have any warnings or errors in VS Code, then sync it to Github and publish it on Github Pages. Remember to paste the Github pages URL in the repo _About_ section.
+When your assignment is finished, check that is doesn't have any warnings or errors in VS Code (fix them if you find any), then sync it to Github and publish it on Github Pages. Remember to paste the Github pages URL in the repo _About_ section.
 
 Make sure to test your website on [validator.nu](https://validator.nu/). If you have any errors, fix them before submitting your URL to Learning Suite.
 
