@@ -177,7 +177,7 @@ describe("CSS tests", () => {
    **   new tests  **
    ******************/
 
-  // visual tests (not tested here): overlay working; filter or bgc
+  // visual tests (not tested here): overlay working; filter or background color
   test("hero section contains an <h1> and a <p>", () => {
     const hero = docs[INDEX].querySelector("section.hero");
     expect(hero.querySelector("h1")).not.toBeNull();

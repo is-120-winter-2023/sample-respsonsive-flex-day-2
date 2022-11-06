@@ -84,7 +84,7 @@ Finally, if you used `margin: 0 auto` to center any elements, remove it. The fle
 
 ## Hero image overlay
 
-Use a flexbox to align the text in your hero image overlay. Make sure that the text doesn't run up to the edge of the screen. Use paddings or margins to leave a gutter around the text. I usually use a variable `--gutter` set to `1rem` that I reuse on all elements that span the width of the viewport.
+Use a flexbox to align the text in your hero image overlay. Remove any positioning like margins/paddings that you were using to position the text before flexbox. Also, make sure that the text doesn't run up to the edge of the screen. Use paddings or margins to leave a gutter around the text. I usually use a variable `--gutter` set to `1rem` that I reuse on all elements that span the width of the viewport.
 
 Since you used the `clamp()` function to dynamically resize your `<h1>` text in the overlay, you may not need a media query for you hero image overlay. Check that your overlay looks good (including adequate whitespace) on all three screen widths.
 
@@ -92,7 +92,7 @@ Since you used the `clamp()` function to dynamically resize your `<h1>` text in 
 
 Use a flexbox to display your menu horizontally. Since your menu items are in a `<ul>`, you need to remove the bullets and the unordered list's default padding and margin. Also, since you want a large "tap target", if you add space to the menu items, add it to the `<a>` elements, but remember, `<a>` elements are inline elements, and will not take top and bottom padding or margins unless you set them to `display: block` or `display: inline-block`.
 
-Menus are simple enough that you can use `justify-content` to space the menu items evenly. If you use `justify-content` you will need to set `align-self: stretch` on the menu container that is a direct child of `<body>` so that the menu won't collapse to its minimum width, which is a behavior of `align-items: center` . You may need to set a `max-width` on a menu container to prevent the menu from stretching too wide on larger screens.
+Menus are simple enough that you can use `justify-content` to space the menu items evenly. If you use `justify-content` you will need to set `align-self: stretch` on the _menu container that is a direct child of_ `<body>` so that the menu won't collapse to its minimum width, which is a behavior of `align-items: center` . You may need to set a `max-width` on a menu container to prevent the menu from stretching too wide on larger screens.
 
 Don't worry if your menu does not display properly on mobile devices. We will fix that in the next assignment by converting it to a dropdown menu. Finally, make sure that your menu items are still styled and have hover effects.
 
@@ -109,6 +109,16 @@ We will create a `.panel` class that will be used to format our articles. Before
 You want to use the smallest image size possible for your article images. If your `<main>` element is set to `max-width: 70rem`, that's a default of `70 x 16px` or `1120px` wide. Your image will take up at most 50% of that width. So your article images should have a physical width of 560px (resize them before adding them, and don't forget to add HTML `height` and `width` attributes).
 
 _I am simplifying here, and not taking device pixel ratios into account. If you were looking at device pixel ratios, you would need a max-width of 1120px for devices with a pixel ratio of 2, and 2240px for devices with a pixel ratio of 3. You could use an `<img>` with `srcset` to provide different image sizes for different devices pixel ratios, but that's beyond the scope of this assignment._
+
+You want all your images to be responsvie, so make sure to check that your `img` elements don't have any `width` or `max-width` properties set. This is the CSS you need for your `img` elements:
+
+```css
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+```
 
 ### Article HTML
 
@@ -130,7 +140,7 @@ You want your article heading, text, and link "button" to be grouped together. W
 
 ### `.panel` flexbox mobile layout
 
-Use a flexbox to format your article for display on a mobile device. The image should be above the text. Instead of moving the `<img>` in the HTML, use the `order` property to have the image appear above the text. Your image must span the width of the article (`width: 100%; height: auto;`). Images must maintain their aspect ratio when resized (not appear stretched or squished). If this happens to your images, look into the `object-fit` property.
+Use a flexbox to format your article for display on a mobile device. The image should be above the text. Instead of moving the `<img>` in the HTML, use the `order` property to have the image appear above the text. Your image must span the width of the article. Images must maintain their aspect ratio when resized (not appear stretched or squished). If this happens to your images, look into the `object-fit` property.
 
 Here's a sample mobile-styled article:
 ![sample mobile-styled article](readme-assets/article-mobile.png)
@@ -143,7 +153,7 @@ Add a media query at the end of your CSS file to format your `.panel` to display
 
 Make sure to
 
-- remove the `order` property so that the images don't display on the left
+- reset the `order` property so that the images don't display on the left
 - use the `flex` property to set up a display ratio for the images and text. For example, you can have the image take up 40% of the article and the text take up 60%, or use another ratio such as 30%/70%.
 - set a gap between the image and text
 - remove any top margin on the article h2 so that it aligns with the top of the image
