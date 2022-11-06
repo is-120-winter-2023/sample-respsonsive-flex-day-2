@@ -241,8 +241,12 @@ CSS tests
 
 :sparkles: **new tests**
 
-- xxxxxxx
+- css contains at least two media queries which use `(min-width: ...)`
+- `body` set to `display: flex` and `flex-direction: column`
+- `main` has `max-width` set
+- two articles with class `panel`
+- `left` class used once inside both panel articles
 
-| :heavy_check_mark: You will also be graded on the following items from the rubric:                                   |
-| :------------------------------------------------------------------------------------------------------------------- |
-| <ul><li>xxx</li><li>xxx</li><li>The general appearance of your web page – proper spacing, font size, etc. </li></ul> |
+| :heavy_check_mark: You will also be graded on the following items from the rubric:                                                                                                                                          |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <ul><li>`.hero` overlay text positioned with a flexbox</li><li>`.panel` flexbox functional</li><li>`.cards` flexbox functional</li><li>The general appearance of your web page – proper spacing, font size, etc. </li></ul> |
