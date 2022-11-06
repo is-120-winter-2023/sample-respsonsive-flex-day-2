@@ -173,10 +173,6 @@ describe("CSS tests", () => {
     expect(regex.test(css)).toBe(true);
   });
 
-  /******************
-   **   new tests  **
-   ******************/
-
   // visual tests (not tested here): overlay working; filter or background color
   test("hero section contains an <h1> and a <p>", () => {
     const hero = docs[INDEX].querySelector("section.hero");
@@ -193,4 +189,54 @@ describe("CSS tests", () => {
     const cards = docs[INDEX].querySelectorAll("section.cards .card");
     expect(cards.length).toBe(4);
   });
+});
+
+/******************
+ **   new tests  **
+ ******************/
+describe("new tests", () => {
+  test("css contains at least two media queries which use (min-width: ...)", () => {
+    const count = (css.match(/@media\s*\(min-width/g) || []).length;
+    expect(count).toBeGreaterThanOrEqual(2);
+    console.log(count);
+  });
+
+  test("body set to display: flex and flex-direction: column", () => {
+    const attr = ["display:\\s+flex", "flex-direction:\\s+column"];
+    let fail = false;
+
+    attr.forEach(a => {
+      const regexStr = `body\\s*{[^}]+${a}`;
+      const regex = new RegExp(regexStr, "gm");
+      if (!regex.test(css)) {
+        fail = true;
+      }
+    });
+
+    expect(fail).toBe(false);
+  });
+
+  test("main has max-width set", () => {
+    const regex = new RegExp(/main\s*{[^}]+max-width\s*:/, "gm");
+    expect(regex.test(css)).toBe(true);
+  });
+
+  test("two articles with class panel", () => {
+    const panels = docs[INDEX].querySelectorAll("article.panel");
+    expect(panels.length).toBeGreaterThanOrEqual(2);
+  });
+
+  test("left class used once inside both panel articles", () => {
+    const panels = docs[INDEX].querySelectorAll("article.panel");
+
+    panels.forEach(panel => {
+      const lefts = panel.querySelectorAll(".left");
+      expect(lefts.length).toBe(1);
+    });
+  });
+
+  /* visual tests (not tested here):
+    - hero overlay flex,
+    - panel flex working
+    - cards flex working  */
 });
