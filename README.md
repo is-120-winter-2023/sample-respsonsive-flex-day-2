@@ -210,42 +210,55 @@ When you are ready for you assignment to be graded, submit a link to your Github
 
 _All but the last three tests are from previous assignments._
 
-General HTML structure
+## General HTML structure
 
-- `<head>` has `<title>`, `<meta>` description and favicon info, loads normalize, fonts, and main styles in proper order
-- all HTML files should contain an `<h1>`, and only one `<h1>`
-- all index.html files have `<header>` containing a `<nav>` and `<ul>`
+    REQUIRED <head> INFO
+      - main index.html has <title>, <meta> description and favicon info
+      - about index.html has <title>, <meta> description and favicon info
+      - contact index.html has <title>, <meta> description and favicon info
+    STYLESHEETS LOADED
+      - main index.html loads normalize, fonts, and main styles in proper order
+      - about index.html loads normalize, fonts, and main styles in proper order
+      - contact index.html loads normalize, fonts, and main styles in proper order
+    ONLY ONE <h1> IN AN HTML FILE
+      - main index.html contains exactly one <h1>
+      - about index.html contains exactly one <h1>
+      - contact index.html contains exactly one <h1>
+    MAIN MENU
+      - main index.html has a <header> containing a <nav> and a <ul>
+      - about index.html has a <header> containing a <nav> and a <ul>
+      - contact index.html has a `<header> containing a <nav> and a <ul>
 
-Tests for main index.html
+## Main index.html
 
-- main index.html must contain a `<picture>`, one `<main>`, at least two `<article>`, an `<aside>`, and a `<footer>`
-- each `<article>` must contain an `<h2>`, at least one `<p>` and an `<a class="button">`
+    - main index.html must contain a <picture>, one <main>, at least two <article>, an <aside>, and a <footer>
 
-Image tests
+## Image tests
 
-- image paths are all lowercase and contain no spaces
-- images must be 1920px wide or less
-- relative paths to images used, and images must be in the images directory
-- non-SVG and non-`<picture>` images have the `<img>` height and width attributes set to the image's intrinsic dimensions
-- `<picture>` element must contain three `<source>` elements with media and srcset attributes
-- contact page loads an SVG file with `<img>`
+    - image paths are all lowercase and contain no spaces
+    - images must be 1920px wide or less
+    - relative paths to images used, and images must be in the images directory
+    - non-SVG and non-<picture> images have the <img> height and width attributes set to the image's intrinsic dimensions
+    - <picture> element must contain three <source> elements with media and srcset attributes
+    - contact page loads an SVG file with <img>
 
-CSS tests
+## CSS tests
 
-- global box-sizing rule set to border-box and :root contains CSS variables
-- font-family, color, and line-height set in body
-- remove underlines from `<a>` and add :hover class for all `<a>` that contain href attribute
-- CSS contains .button style and .button:hover declarations
-- hero `h1` font-size set using `clamp()`
-- section with class `.cards` contains four cards, each with class `.card`
+    - global box-sizing rule set to border-box and :root contains CSS variables
+    - font-family, color, and line-height set in body
+    - remove underlines from <a> and add :hover class for all <a> that contain href attribute
+    - CSS contains .button style and .button:hover declarations
+    - hero section contains an <h1> and a <p>
+    - hero h1 font-size set using clamp()
+    - section with class .cards contains four cards, each with class .card
 
-:sparkles: **new tests**
+## :sparkles: New tests
 
-- css contains at least two media queries which use `(min-width: ...)`
-- `body` set to `display: flex` and `flex-direction: column`
-- `main` has `max-width` set
-- two articles with class `panel`
-- `left` class used once inside both panel articles
+    - css contains at least two media queries which use (min-width: ...)
+    - body set to display: flex and flex-direction: column
+    - main has max-width set
+    - two articles with class panel
+    - left class used once inside both panel articles
 
 | :heavy_check_mark: You will also be graded on the following items from the rubric:                                                                                                                                          |
 | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
