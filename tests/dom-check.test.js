@@ -69,10 +69,8 @@ describe("\nGeneral HTML structure\n-----------------------", () => {
           `${name} index.html is missing <meta> description tag`
         ).not.toBeNull();
         expect(
-          doc.querySelector(
-            "link[rel='shortcut icon']",
-            `${name} index.html is missing link to favicon`
-          )
+          doc.querySelector("link[rel='shortcut icon']"),
+          `${name} index.html is missing link to favicon`
         ).not.toBeNull();
       }
     );
