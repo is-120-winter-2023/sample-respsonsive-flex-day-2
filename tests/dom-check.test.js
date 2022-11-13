@@ -98,12 +98,13 @@ describe("\nGeneral HTML structure\n-----------------------", () => {
         ).toBe(true);
 
         let mainFound = false;
+        const lastStylesheet = stylesheets[stylesheets.length - 1];
         if (name === "main") {
-          if (stylesheets[2] && stylesheets[2].href === "styles/main.css") {
+          if (lastStylesheet && lastStylesheet.href === "styles/main.css") {
             mainFound = true;
           }
         } else {
-          if (stylesheets[2] && stylesheets[2].href === "../styles/main.css") {
+          if (lastStylesheet && lastStylesheet.href === "../styles/main.css") {
             mainFound = true;
           }
         }
