@@ -41,9 +41,19 @@ const svg = new RegExp(/svg$/);
 
 imgs.forEach(img => {
   //clean paths
-  const path = img.image.src.replace(/^..\//, "");
+  let hotlink = false;
+  if (img.image.src.startsWith("http")) {
+    hotlink = true;
+  }
+  let path = "";
+  let dimensions = 0;
+
+  if (!hotlink) {
+    path = img.image.src.replace(/^..\//, "");
+    dimensions = sizeOf(path);
+  }
+
   // get image dimensions
-  const dimensions = sizeOf(path);
 
   images.push({
     img: img.image,
@@ -51,6 +61,7 @@ imgs.forEach(img => {
     path: path,
     checkDimensions: !hero.test(path) && !svg.test(path),
     file: convertDocIndexToName(img.index),
+    hotlink: hotlink,
   });
 });
 
@@ -159,12 +170,12 @@ describe("\nImage tests\n-----------------------", () => {
   });
 
   // TODO: check <picture> source images
-  test("images must be 1920px wide or less", () =>
+  test("images must be 2000px wide or less", () =>
     images.forEach(img =>
       expect(
         img.dimensions.width,
         `image width of ${img.dimensions.width} in ${img.file} index.html too wide`
-      ).toBeLessThanOrEqual(1920)
+      ).toBeLessThanOrEqual(2000)
     ));
 
   test("relative paths to images used, and images must be in the images directory", () => {
@@ -299,7 +310,7 @@ describe("\nCSS tests\n-----------------------", () => {
 
   // visual tests (not tested here): overlay working; filter or background color
   test("hero section contains an <h1> and a <p>", () => {
-    const hero = docs[INDEX].querySelector("section.hero");
+    const hero = docs[INDEX].querySelector(".hero");
     expect(hero.querySelector("h1")).not.toBeNull();
     expect(hero.querySelector("p")).not.toBeNull();
   });
