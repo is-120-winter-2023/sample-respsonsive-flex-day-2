@@ -8,7 +8,7 @@
 
 In this assignment you will add flexboxes to your `<body>` element, hero overlay, menu, articles, and cards using mobile-first design and media queries.
 
-| :warning: This assignment builds on your _Overlays and cards_ assignment                                                                                                                                                                                                                                                                                                                                                                               |
+| ⚠️  This assignment builds on your _Overlays and cards_ assignment                                                                                                                                                                                                                                                                                                                                                                               |
 | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | After cloning this repo and opening it in VSCode, copy the following files and folders from your _Overlays and cards_ assignment into this repo.<br><br><ul><li>📄 index.html</li><li>📄 favicon.ico</li><li>📁styles</li><li>📁images</li><li>📁about</li><li>📁contact</li></ul><br>**Make sure that you don't copy any other folders or files, including the `test` folder, the hidden `.git` and `.github` folders, and the `package.json` files** |
 
@@ -18,11 +18,19 @@ We will be converting our websites to responsive websites using the _mobile-firs
 
 One of the main reasons to use the mobile-first design strategy is that the mobile layout is usually the simplest. Your main CSS provides the mobile layout, and then media queries are added provide more complex layouts for larger screens.
 
-When writing media queries, remember that they are overriding previous CSS, so you need to place them _after_ the CSS that they are overriding. I recommend placing all media queries at the end of your CSS file so they are sure to override previous CSS, and they are easy to find.
+When writing media queries, remember that they are overriding previous CSS, so you need to place them _after_ the CSS that they are overriding.
+
+| 💡 Media queries and specificity |
+|:---|
+| I recommend placing all media queries at the end of your CSS file so they are sure to override previous CSS, and they are easy to find. |
+
+| 💡 Learn more about mobile-first design |
+|:---|
+| Review CSS Trick's [How to Develop and Test a Mobile-First Design in 2021](https://css-tricks.com/how-to-develop-and-test-a-mobile-first-design-in-2021/) &ndash; _you can skip the end of the article when it describes testing, that's beyond the scope of this class_. For more design tips see Adobe Xd's [Mobile First Design Strategy: The When, Why and How](https://xd.adobe.com/ideas/process/ui-design/what-is-mobile-first-design/). Pay particular attention to the concepts of _progressive advancement_ and _graceful degredation_ |
 
 ### Determining breakpoints
 
-You must create a minimum of three layouts, one for mobile phones, one for tablets, and one for desktops.
+For this assignment, you must create a minimum of three layouts, one for mobile phones, one for tablets, and one for desktops.
 
 When designing a responsive website, you need to decide where to place breakpoints. A breakpoint is a point in your CSS where you change the layout of your website. It's common to see breakpoints at 320px, 480px, 768px, and 1024px. These are based on dimensions of older iPhones and iPads. With so many devices on the market there're no "set in stone" breakpoints, and while these may be good starting points, it's better base your breakpoints on content, not device, and to test your website on a variety of devices to determine the breakpoints that work best for your website.
 
@@ -76,7 +84,7 @@ You will want some of your elements, such as your main, to be centered. To force
 
 ```css
 main {
-  align-self: stretch;
+  align-self: center;
   ...;
 }
 ```
@@ -93,11 +101,13 @@ Since you used the `clamp()` function to dynamically resize your `<h1>` text in 
 
 ## Menu
 
-Use a flexbox to display your menu horizontally. Since your menu items are in a `<ul>`, you need to remove the bullets and the unordered list's default padding and margin. Also, since you want a large "tap target", if you add space to the menu items, add it to the `<a>` elements, but remember, `<a>` elements are inline elements, and will not take top and bottom padding or margins unless you set them to `display: block` or `display: inline-block`.
+Use a flexbox to display your menu horizontally. Since your menu items are in a `<ul>`, you need to remove the bullets and the unordered list's default padding and margin. Also, since you want a large _tap target_, if you add space to the menu items, add it to the `<a>` elements, but remember, `<a>` elements are inline elements, and will not take top and bottom padding or margins unless you set them to `display: block` or `display: inline-block`.
 
-Menus are simple enough that you can use `justify-content` to space the menu items evenly. If you use `justify-content` you will need to set `align-self: stretch` on the _menu container that is a direct child of_ `<body>` so that the menu won't collapse to its minimum width, which is a behavior of `align-items: center` . You may need to set a `max-width` on a menu container to prevent the menu from stretching too wide on larger screens.
+Menus are simple enough that you can use `justify-content` to space the menu items evenly. If you use `justify-content` you will need to set `align-self: stretch` on the _menu container that is a direct child of_ `<body>` so that the menu won't collapse to its minimum width, which is a behavior of `align-items: center`.
 
 Don't worry if your menu does not display properly on mobile devices. We will fix that in the next assignment by converting it to a dropdown menu. Finally, make sure that your menu items are still styled and have hover effects.
+
+You are welcome to add some "dead" links to your menu to make it look more like a real website. You can use the `#` character to create a link that doesn't go anywhere. You can also remove the Home link from your menu, since we are on the home page already.
 
 ## Main
 
