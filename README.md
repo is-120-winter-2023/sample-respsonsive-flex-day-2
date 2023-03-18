@@ -62,7 +62,8 @@ It's common to use a flexbox with flex direction set to column for the `<body>` 
 body {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
+  /* stretch is the default value and could be left out */
   ...;
 }
 ```
@@ -71,16 +72,18 @@ body {
 | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | <p>Many beginners struggle with understanding the how differently `align-items: stretch` and `align-items: center` display elements.</p><p>The default value of `align-items` is `stretch`, which means that the flex items with `flex-direction: column` will stretch to fill the width of the flex container. This is similar to the behavior of block elements in standard _flow_ layout.</p><p>However, the behavior changes when `align-items: center` is used. Flex items set with `align-items: center` will be centered in the flex container, but they will behave similar to inline-elements. If their width is less than the width of the flex container, they will not expand to fill the width of the flex container. I often refer to this as "snapping" to fit the contents.</p> |
 
-You will want some of your elements, such as your hero image, to fill the width of the screen. To force this you can use `align-self: stretch` to override the default `align-items: center` behavior set in the `.body` CSS.
+You will want some of your elements, such as your main, to be centered. To force this you can use `align-self: center` to override the default `align-items: stretch` behavior set in the `body` CSS.
 
 ```css
-.hero {
+main {
   align-self: stretch;
   ...;
 }
 ```
 
-Finally, if you used `margin: 0 auto` to center any elements, remove it. The flexbox will center the elements for you.
+| ⚠️ **Remove all _old-school_ centering CSS** |
+| :--- |
+| If you used `margin: 0 auto` or the more exotic  `transform: translate(-50%, -50%);` to center any elements, remove them. If you used `float`, no judgement, just quietly remove any `float` declarations.  Also remove any margins or paddings that you were using to center elements. Flexbox will make your layout much easier.|
 
 ## Hero image overlay
 
@@ -176,7 +179,7 @@ Create three layouts:
 
 ![cards example](readme-assets/card-layouts.png)
 
-**Make sure that**
+### Make sure that
 
 - you use mobile-first design in your CSS
 - images and cards resize (no fixed widths)
@@ -193,12 +196,6 @@ When your assignment is finished, check that you don't have any warnings or erro
 
 Make sure to test your website on [validator.nu](https://validator.nu/). If you have any errors, fix them before submitting your URL to Learning Suite.
 
-## :rocket: Publish on Github Pages
-
-When your assignment is finished, check that is doesn't have any warnings or errors in VS Code (fix them if you find any), then sync it to Github and publish it on Github Pages. Remember to paste the Github pages URL in the repo _About_ section.
-
-Make sure to test your website on [validator.nu](https://validator.nu/). If you have any errors, fix them before submitting your URL to Learning Suite.
-
 ## ⬆️ Post repo URL on Learning Suite
 
 Review the tests below and make sure your repo passes them. If you kept your website consistent with the previous assignments, you should pass most of them.
@@ -212,6 +209,7 @@ _All but the last three tests are from previous assignments._
 
 ## General HTML structure
 
+```text
     REQUIRED <head> INFO
       - main index.html has <title>, <meta> description and favicon info
       - about index.html has <title>, <meta> description and favicon info
@@ -251,14 +249,17 @@ _All but the last three tests are from previous assignments._
     - hero section contains an <h1> and a <p>
     - hero h1 font-size set using clamp()
     - section with class .cards contains four cards, each with class .card
+```
 
 ## :sparkles: New tests
 
+```text
     - css contains at least two media queries which use (min-width: ...)
     - body set to display: flex and flex-direction: column
     - main has max-width set
     - two articles with class panel
     - left class used once inside both panel articles
+```
 
 | :heavy_check_mark: You will also be graded on the following items from the rubric:                                                                                                                                          |
 | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
