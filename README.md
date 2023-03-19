@@ -177,7 +177,9 @@ Create a `.left` class that, when added to an article text-wrapper or image-wrap
 
 Use a flexbox and media queries to make your cards responsive.
 
-Create three layouts:
+First, if you used overlays and any hacks to position text, convert them to flexbox.
+
+Then create three layouts:
 
 - 1x4 column for mobile
 - 2x2 grid for tablet
@@ -187,7 +189,7 @@ Create three layouts:
 
 ### Make sure that
 
-- you use mobile-first design in your CSS
+- you use mobile-first design in your CSS (your main css should layout for mobile; media queries should be used to change the layout for larger viewports)
 - images and cards resize (no fixed widths)
 - if you have visible text, the images and text have equal heights on all cards (if you need help on this, look into setting an [aspect-ratio](https://developer.mozilla.org/en-US/docs/Web/CSS/aspect-ratio) and [object-fit](https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit) on your images)
 - fonts sizes are appropriate for each layout
@@ -196,6 +198,128 @@ Create three layouts:
 
 If your cards are inside `<main>`, you may want to move them outside `<main>` so that they are not limited by `<main>`'s `max-width`.
 
+## :arrow_up: Commit your changes and sync the changes to Github
+
+### Check for errors or warnings
+
+Use Live Server to check that your site displays correctly and make sure that the VS Code status bar doesn't show any errors or warnings. When you are ready, commit your changes and sync them to Github.
+
+### 🚀 Publish your web page on Github Pages
+
+Open your repo on Github. Publish your site on GitHub pages.
+
+### ⚙️ Enter your repo about information
+
+In your main repo page edit the About section. Enter a description of your repo and add your Pages URL in the **Website** text field.
+
+## Validate your HTML with validator.nu
+
+Once your page is live, use the [validator.nu](https://validator.nu/) service to validate the HTML on all three of your web pages (main, contact, about). Select Show "outline" and "image report" then paste your page URL into the validator and click Check.
+
+**NOTE**: Make sure to check that your `contact` and `about` pages also validate, not just your main page.
+
+Check that your heading outline is in order and that each image has a valid `alt` attribute.
+
+If you have any errors, fix them in VSCode, commit and sync, and then re-validate your page. Make sure to wait a few minutes for Github to generate the updated page.
+
+## Pass automated tests
+
+After you've ensured that your page has validated, open your repo in Github and check that you've passed the automated tests. If you haven't passed all of the tests, fix any errors and commit and sync your changes.
+
+### ⭐ Current automated tests
+
+- HTML validation
+- HTML proofer
+
+*Three new tests were added. They are marked with a* ✨ *below*
+
+Pretests (37):
+
+- General HTML structure
+  - REQUIRED `<head>` INFO
+    - main index.html has `<title>`, `<meta>` description and favicon info
+    - about index.html has `<title>`, `<meta>` description and favicon info
+    - contact index.html has `<title>`, `<meta>` description and favicon info
+  - STYLESHEETS LOADED
+    - main index.html loads styles/main.css
+    - about index.html loads styles/main.css
+    - contact index.html loads styles/main.css
+  - NO `<br>` TAGS
+    - main index.html does not contain any `<br>` tags
+    - about index.html does not contain any `<br>` tags
+    - contact index.html does not contain any `<br>` tags
+  - ONLY ONE `<h1>` IN AN HTML FILE
+    - main index.html contains exactly one `<h1>`
+    - about index.html contains exactly one `<h1>`
+    - contact index.html contains exactly one `<h1>`
+  - MAIN MENU
+    - main index.html has a `<header>` containing a `<nav>` and a `<ul>`
+    - about index.html has a `<header>` containing a `<nav>` and a `<ul>`
+    - contact index.html has a `<header>` containing a `<nav>` and a `<ul>`
+    - main index.html - relative paths used in main menu; paths do not end with 'index.html'
+    - about index.html - relative paths used in main menu; paths do not end with 'index.html'
+    - contact index.html - relative paths used in main menu; paths do not end with 'index.html'
+- Image tests
+  - image paths are all lowercase and contain no spaces
+  - images must be 2000px wide or less
+  - relative paths to images used, and images must be in the images directory
+  - non-SVG and non-`<picture>` `<img>` height and width attributes set to the image's intrinsic dimensions
+  - `<picture>` element must contain three `<source>` elements with media and srcset attributes
+  - about page includes an `<img>` element that uses `srcset` and `sizes` to load three versions of the same image with different widths
+  - contact page loads an SVG file with `<img>`
+- MAIN index.html ONLY
+  - main index.html must contain a `<picture>`, one `<main>`, at least two `<article>`, an `<aside>`, and a `<footer>`
+  - `<article>` must contain an `<h2>` and at least one `<p>`
+  - ✨ `<div class="hero">` contains an `<h1>` and a `<p>`
+  - ✨`<section class="cards">` contains four cards, each with class `card`
+- CSS tests
+  - `!important` never used
+  - global `box-sizing` rule set to `border-box` and `:root` contains CSS variables
+  - `font-family` and `color` set in `body`
+  - remove underlines from `<a>` and add `:hover` class for all <a> that contain `href` attribute
+  - CSS contains `.button` and `.button:hover` declarations
+  - footer has styling including `background-color`
+  - main has `max-width` set
+  - ✨ hero `h1` font-size set using `clamp()`
+
+
+| :heavy_check_mark: You will also be graded on the following items from the rubric:                                                                                                                                                                          |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <ul><li>Hero image is de-emphasized with a semi-transparent background, a gradient background, or a filter</li><li>Cards have a hover effect with a transition</li><li>The general appearance of your web page – proper spacing, font size, etc. </li></ul> |
+
+## 📝 Submit link to repo on Learning Suite
+
+_When you are ready for you assignment to be graded, submit a link to your Github repo on Learning Suite for the **Overlays and Cards** assignment_
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+oooooooooooooooooooooooooooooooooooooooooo
 ## :rocket: Publish on Github Pages
 
 When your assignment is finished, check that you don't have any warnings or errors in VS Code, then sync it to Github and publish it on Github Pages. Remember to paste the Github pages URL in the repo _About_ section.

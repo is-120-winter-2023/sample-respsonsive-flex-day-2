@@ -322,12 +322,12 @@ header nav a[href]:hover::after {
 /***** Cards *****/
 .cards {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
   margin: 0 1rem;
 }
 
 .card {
-  flex: 1 1 0;
   position: relative;
   color: #fff;
   font-family: "Barlow Condensed", sans-serif;
@@ -335,22 +335,36 @@ header nav a[href]:hover::after {
   font-weight: 400;
 }
 
+.card p {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  line-height: 1;
+  padding: var(--gutter);
+  background-color: rgb(0 0 0 / 60%);
+  transition: background-color 400ms ease-in-out;
+}
+
 .card:hover p {
   color: transparent;
   background-color: rgb(0 0 0 / 0%);
 }
 
-.card p {
-  position: absolute;
-  inset: 0;
-  padding: 30%;
-  margin: 0;
-  line-height: 1;
-  background-color: rgb(0 0 0 / 60%);
-  transition: background-color 400ms ease-in-out;
+/***** Media queries *****/
+@media (min-width: 480px) {
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    flex: 1 1 45%;
+  }
 }
 
-/***** Media queries *****/
 @media (min-width: 600px) {
   .panel {
     flex-direction: row;
@@ -376,5 +390,11 @@ header nav a[href]:hover::after {
 
   .panel .left {
     order: -1;
+  }
+}
+
+@media (min-width: 900px) {
+  .cards {
+    flex-wrap: nowrap;
   }
 }
