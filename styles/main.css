@@ -142,9 +142,9 @@ a[href]:hover {
 }
 
 main {
-  align-self: center;
+  margin: 0 auto;
   padding: 0 var(--gutter);
-  max-width: 70rem;
+  max-width: 50rem;
 }
 
 article,
@@ -237,10 +237,7 @@ a.button:hover {
 }
 
 .hero .text-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  margin-top: 3rem;
   position: absolute;
   inset: 0;
   text-align: center;
@@ -264,14 +261,6 @@ a.button:hover {
 /***** Menu *****/
 header {
   margin-bottom: var(--gap);
-}
-
-header nav ul {
-  display: flex;
-  padding: var(--half-gap) 0;
-  margin: 0;
-  list-style-type: none;
-  justify-content: space-around;
 }
 
 header nav a {
@@ -310,19 +299,10 @@ header nav a[href]:hover::after {
 }
 
 /***** Panels *****/
-.panel {
-  display: flex;
-  flex-direction: column;
-}
-
-.panel .image-wrapper {
-  order: -1;
-}
 
 /***** Cards *****/
 .cards {
   display: flex;
-  flex-direction: column;
   gap: 1rem;
   margin: 0 1rem;
 }
@@ -338,12 +318,9 @@ header nav a[href]:hover::after {
 .card p {
   position: absolute;
   inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin: 0;
   line-height: 1;
-  padding: var(--gutter);
+  padding: 30% var(--gutter) 1rem;
   background-color: rgb(0 0 0 / 60%);
   transition: background-color 400ms ease-in-out;
 }
@@ -354,47 +331,3 @@ header nav a[href]:hover::after {
 }
 
 /***** Media queries *****/
-@media (min-width: 480px) {
-  .cards {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .card {
-    flex: 1 1 45%;
-  }
-}
-
-@media (min-width: 600px) {
-  .panel {
-    flex-direction: row;
-    align-items: center;
-    gap: var(--gutter);
-    font-size: 1.25rem;
-    height: 100vh;
-  }
-
-  .panel h2 {
-    margin-top: 0;
-    font-size: 4rem;
-  }
-
-  .panel .text-wrapper {
-    flex: 1 1 40%;
-  }
-
-  .panel .image-wrapper {
-    flex: 1 1 60%;
-    order: 0;
-  }
-
-  .panel .left {
-    order: -1;
-  }
-}
-
-@media (min-width: 900px) {
-  .cards {
-    flex-wrap: nowrap;
-  }
-}
