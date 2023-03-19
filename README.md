@@ -231,9 +231,9 @@ After you've ensured that your page has validated, open your repo in Github and 
 - HTML validation
 - HTML proofer
 
-*Three new tests were added. They are marked with a* ✨ *below*
+#### _FOUR new tests were added. They are marked with a_ ✨ _below_
 
-Pretests (37):
+Pretests (41):
 
 - General HTML structure
   - REQUIRED `<head>` INFO
@@ -270,8 +270,11 @@ Pretests (37):
 - MAIN index.html ONLY
   - main index.html must contain a `<picture>`, one `<main>`, at least two `<article>`, an `<aside>`, and a `<footer>`
   - `<article>` must contain an `<h2>` and at least one `<p>`
-  - ✨ `<div class="hero">` contains an `<h1>` and a `<p>`
-  - ✨`<section class="cards">` contains four cards, each with class `card`
+  - `<div class="hero">` contains an `<h1>` and a `<p>`
+  - `<section class="cards">` contains four cards, each with class `card`
+  - ✨ two articles with class `.panel`
+  - ✨ `.left` class used once inside both panel articles
+
 - CSS tests
   - `!important` never used
   - global `box-sizing` rule set to `border-box` and `:root` contains CSS variables
@@ -280,106 +283,17 @@ Pretests (37):
   - CSS contains `.button` and `.button:hover` declarations
   - footer has styling including `background-color`
   - main has `max-width` set
-  - ✨ hero `h1` font-size set using `clamp()`
+  - hero `h1` font-size set using `clamp()`
+  - ✨ CSS contains at least two media queries which use `(min-width: ...)`
+  - ✨ `body` set to `display: flex` and `flex-direction: column`
 
-
-| :heavy_check_mark: You will also be graded on the following items from the rubric:                                                                                                                                                                          |
-| :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <ul><li>Hero image is de-emphasized with a semi-transparent background, a gradient background, or a filter</li><li>Cards have a hover effect with a transition</li><li>The general appearance of your web page – proper spacing, font size, etc. </li></ul> |
+| :heavy_check_mark: You will also be graded on the following items from the rubric:                                                                                                                                          |
+| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <ul><li>`.hero` overlay text positioned with a flexbox</li><li>`.panel` flexbox functional</li><li>`.cards` flexbox functional</li><li>The general appearance of your web page – proper spacing, font size, etc. </li></ul> |
 
 ## 📝 Submit link to repo on Learning Suite
 
 _When you are ready for you assignment to be graded, submit a link to your Github repo on Learning Suite for the **Overlays and Cards** assignment_
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-oooooooooooooooooooooooooooooooooooooooooo
-## :rocket: Publish on Github Pages
-
-When your assignment is finished, check that you don't have any warnings or errors in VS Code, then sync it to Github and publish it on Github Pages. Remember to paste the Github pages URL in the repo _About_ section.
-
-Make sure to test your website on [validator.nu](https://validator.nu/). If you have any errors, fix them before submitting your URL to Learning Suite.
-
-## ⬆️ Post repo URL on Learning Suite
-
-Review the tests below and make sure your repo passes them. If you kept your website consistent with the previous assignments, you should pass most of them.
-
-When you are ready for you assignment to be graded, submit a link to your Github repo on Learning Suite for the **Responsive flexboxes** assignment
-<br><br><br>
-
-### :star: Assignment tests
-
-_All but the last three tests are from previous assignments._
-
-## General HTML structure
-
-```text
-    REQUIRED <head> INFO
-      - main index.html has <title>, <meta> description and favicon info
-      - about index.html has <title>, <meta> description and favicon info
-      - contact index.html has <title>, <meta> description and favicon info
-    STYLESHEETS LOADED
-      - main index.html loads normalize, fonts, and main styles in proper order
-      - about index.html loads normalize, fonts, and main styles in proper order
-      - contact index.html loads normalize, fonts, and main styles in proper order
-    ONLY ONE <h1> IN AN HTML FILE
-      - main index.html contains exactly one <h1>
-      - about index.html contains exactly one <h1>
-      - contact index.html contains exactly one <h1>
-    MAIN MENU
-      - main index.html has a <header> containing a <nav> and a <ul>
-      - about index.html has a <header> containing a <nav> and a <ul>
-      - contact index.html has a `<header> containing a <nav> and a <ul>
-
-## Main index.html
-
-    - main index.html must contain a <picture>, one <main>, at least two <article>, an <aside>, and a <footer>
-
-## Image tests
-
-    - image paths are all lowercase and contain no spaces
-    - images must be 1920px wide or less
-    - relative paths to images used, and images must be in the images directory
-    - non-SVG and non-<picture> images have the <img> height and width attributes set to the image's intrinsic dimensions
-    - <picture> element must contain three <source> elements with media and srcset attributes
-    - contact page loads an SVG file with <img>
-
-## CSS tests
-
-    - global box-sizing rule set to border-box and :root contains CSS variables
-    - font-family, color, and line-height set in body
-    - remove underlines from <a> and add :hover class for all <a> that contain href attribute
-    - CSS contains .button style and .button:hover declarations
-    - hero section contains an <h1> and a <p>
-    - hero h1 font-size set using clamp()
-    - section with class .cards contains four cards, each with class .card
-```
 
 ## :sparkles: New tests
 
@@ -390,7 +304,3 @@ _All but the last three tests are from previous assignments._
     - two articles with class panel
     - left class used once inside both panel articles
 ```
-
-| :heavy_check_mark: You will also be graded on the following items from the rubric:                                                                                                                                          |
-| :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| <ul><li>`.hero` overlay text positioned with a flexbox</li><li>`.panel` flexbox functional</li><li>`.cards` flexbox functional</li><li>The general appearance of your web page – proper spacing, font size, etc. </li></ul> |

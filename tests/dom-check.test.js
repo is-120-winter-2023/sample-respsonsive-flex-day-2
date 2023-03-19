@@ -8,11 +8,11 @@ const CHECK_FONTS = true; // enable for font tests
 const CHECK_FOR_INLINE_SVG = false; // enable for inline SVG tests
 const CHECK_FORM = false;
 const CHECK_FOR_BUTTON = true; // enable for button classes
-const CHECK_FOR_PANELS = false; // enable for panel classes
+const CHECK_FOR_PANELS = true; // enable for panel classes - responsive flexboxes
 const CHECK_FOR_HERO = true; // enable for hero info - Overlays and cards
 const CHECK_FOR_CARDS = true; // enable for card classes - Overlays and cards
-const CHECK_FOR_FLEX = false; // enable for flex class on body
-const CHECK_FOR_MEDIA_QUERIES = false; // enable for media queries
+const CHECK_FOR_FLEX = true; // enable for flex class on body - responsive flexboxes
+const CHECK_FOR_MEDIA_QUERIES = true; // enable for media queries - responsive flexboxes
 /**
  * Converts an integer index to a string name
  * @param {int} index
@@ -81,6 +81,7 @@ if (doms[0]) {
    * @returns {Array} array of ImageInfo objects for each image in the document
    */
   function buildImagesArray(docs) {
+    //TODO: fails when image path begins with /
     // array of img elements and their document index
     let imgs = [];
     const images = [];
