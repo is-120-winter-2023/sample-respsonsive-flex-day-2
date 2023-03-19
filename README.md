@@ -111,7 +111,9 @@ You are welcome to add some "dead" links to your menu to make it look more like 
 
 ## Main
 
-Your `<main>` element should contain two `<article>` elements. Since we don't want a line of text to be too long to read comfortably, you should set a maximum width for your `<main>` element. We will be formatting our articles with images on the left or right of the text, so if you have set a `max-width` on your `<main>` element, you will need to increase it to accommodate the article images. You can adjust it after you finish your article layouts, but I'd recommend setting it to `max-width: 70rem` while you layout your articles, and then adjust it, if needed, when your articles are styled. Also, make sure your main has a gutter around it, so it doesn't run up to the edge of the screen.
+### Increase the `max-width` of your `<main>` element to accommodate your article images
+
+Your `<main>` element should contain two `<article>` elements. Since we don't want a line of text to be too long to read comfortably, you should have set a maximum width for your `<main>` element. We will be adding images to our articles on the left or right of the text, so you will need to increase the `max-width` on your `<main>` element to accommodate the images. I'd recommend setting it to `max-width: 70rem` while you layout your articles, and then adjust it, if needed, when your articles are styled. Also, make sure your main has a gutter (left and right padding) around it, so it doesn't run up to the edge of the screen on narrow viewports.
 
 ## Responsive article `.panel` class
 
@@ -119,19 +121,13 @@ We will create a `.panel` class that will be used to format our articles. Before
 
 ### Article images
 
-You want to use the smallest image size possible for your article images. If your `<main>` element is set to `max-width: 70rem`, that's a default of `70 x 16px` or `1120px` wide. Your image will take up at most 50% of that width. So your article images should have a physical width of 560px (resize them before adding them, and don't forget to add HTML `height` and `width` attributes).
+Find two images to accompany your articles. You can use the same images that you used in the previous assignment, or you can find new ones. Save the original images, and resize them to a width of 600px.
 
-_I am simplifying here, and not taking device pixel ratios into account. If you were looking at device pixel ratios, you would need a max-width of 1120px for devices with a pixel ratio of 2, and 2240px for devices with a pixel ratio of 3. You could use an `<img>` with `srcset` to provide different image sizes for different devices pixel ratios, but that's beyond the scope of this assignment._
+#### Why 600px wide?
 
-You want all your images to be responsvie, so make sure to check that your `img` elements don't have any `width` or `max-width` properties set. This is the CSS you need for your `img` elements:
+You want to use the smallest image size possible for your article images. If your `<main>` element is set to `max-width: 70rem`, that's a default of `70 x 16px` or `1120px` wide. Depending on your design, let's say your image will take up at most 50% of that width. So your article images should have a physical width of 560px, and I rounded it up to 600px. Don't forget to add HTML `height` and `width` attributes.  You may need different widths for your images, so this is not set in stone. You may need to do some math on your own to determine the best image size for your design.
 
-```css
-img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-```
+_I am simplifying here, and not taking device pixel ratios into account and I'm ignoring the fact that some users increase their base font size. If you were looking at device pixel ratios, you would need a max-width of 1120px for devices with a pixel ratio of 2, and 2240px for devices with a pixel ratio of 3. You could use an `<img>` with `srcset` to provide different image sizes for different devices pixel ratios, but that's beyond the scope of this assignment._
 
 ### Article HTML
 

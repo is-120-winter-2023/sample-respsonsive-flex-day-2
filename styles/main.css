@@ -144,7 +144,7 @@ a[href]:hover {
 main {
   align-self: center;
   padding: 0 var(--gutter);
-  max-width: 50rem;
+  max-width: 70rem;
 }
 
 article,
@@ -262,6 +262,10 @@ a.button:hover {
 }
 
 /***** Menu *****/
+header {
+  margin-bottom: var(--gap);
+}
+
 header nav ul {
   display: flex;
   padding: var(--half-gap) 0;
@@ -305,6 +309,16 @@ header nav a[href]:hover::after {
   transform-origin: left;
 }
 
+/***** Panels *****/
+.panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel .image-wrapper {
+  order: -1;
+}
+
 /***** Cards *****/
 .cards {
   display: flex;
@@ -334,4 +348,33 @@ header nav a[href]:hover::after {
   line-height: 1;
   background-color: rgb(0 0 0 / 60%);
   transition: background-color 400ms ease-in-out;
+}
+
+/***** Media queries *****/
+@media (min-width: 600px) {
+  .panel {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--gutter);
+    font-size: 1.25rem;
+    height: 100vh;
+  }
+
+  .panel h2 {
+    margin-top: 0;
+    font-size: 4rem;
+  }
+
+  .panel .text-wrapper {
+    flex: 1 1 40%;
+  }
+
+  .panel .image-wrapper {
+    flex: 1 1 60%;
+    order: 0;
+  }
+
+  .panel .left {
+    order: -1;
+  }
 }
