@@ -142,9 +142,9 @@ a[href]:hover {
 }
 
 main {
-  margin: 0 auto;
+  align-self: center;
   padding: 0 var(--gutter);
-  max-width: 50rem;
+  max-width: 70rem;
 }
 
 article,
@@ -243,6 +243,8 @@ a.button:hover {
   text-align: center;
   color: #fff;
   padding: 0 var(--gutter);
+  display: flex;
+  flex-direction: column;
 }
 
 .hero h1 {
@@ -263,6 +265,14 @@ header {
   margin-bottom: var(--gap);
 }
 
+header ul {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
 header nav a {
   position: relative;
   font-size: 1.5rem;
@@ -271,6 +281,7 @@ header nav a {
   margin: var(--half-gap) var(--gutter);
   padding: 1rem;
   color: var(--color-secondary);
+  display: inline-block;
 }
 
 header nav a[href]:hover {
@@ -299,6 +310,15 @@ header nav a[href]:hover::after {
 }
 
 /***** Panels *****/
+
+.panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.panel .image-wrapper {
+  order: -1;
+}
 
 /***** Cards *****/
 .cards {
@@ -331,3 +351,21 @@ header nav a[href]:hover::after {
 }
 
 /***** Media queries *****/
+@media (min-width: 500px) {
+  .panel {
+    flex-direction: row;
+  }
+
+  .panel h2 {
+    margin: 0;
+  }
+
+  .panel .text-wrapper {
+    flex: 1 1 40%;
+  }
+
+  .panel .image-wrapper {
+    order: 0;
+    flex: 1 1 60%;
+  }
+}
